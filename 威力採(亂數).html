@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // 產生威力彩號碼
+        function getNumber(number){
+            return Math.floor(Math.random() * number)+1;
+        }
+        // 取得號碼
+        function addNumber(number,gain){
+
+            // 蒐集號碼列表
+            let lists = [];
+            
+            // 判斷號碼重複
+            for(i = 1; i<=gain;i++){
+                count = getNumber(number)
+                while(lists.includes(count)){
+                    count =  getNumber(number)
+                }
+                lists.push(count)
+            }
+            return lists
+        }
+        // 列印號碼
+        document.write(`A區號碼是{${addNumber(38,6)}}<br>B區號碼是{${addNumber(8,1)}}`)
+    </script>
+</body>
+</html>
